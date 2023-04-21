@@ -1,5 +1,3 @@
-
-import Image from 'next/image'
 import Hero from '../components/Hero';
 import Analytic from '@/components/Analytics';
 import Footer from '@/components/Footer'

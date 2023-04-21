@@ -1,10 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
-import Typed from 'react-typed';
 
 const Hero = ({heading, message}) => {
   return (
-    <><div className='flex items-center justify-center h-screen bg-fixed bg-center bg-cover custom-img'>
+    <><div className='bg-[url(../public/jr-korpa-stwHyPWNtbI-unsplash\(1\).jpg)] flex items-center justify-center h-screen bg-fixed bg-center bg-cover bg-no-repeat'>
       {/* Overlay */}
       <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/70 z-[2]' />
       <div className='p-5 text-white z-[2] mt-[-10rem] text-center'>
