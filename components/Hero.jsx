@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Typed from 'react-typed';
 
 const Hero = ({heading, message}) => {
   return (
