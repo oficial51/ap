@@ -1,5 +1,7 @@
+'use client'
 
-import React from 'react'
+
+import React, {useState, useRef} from 'react'
 import { HiUser, HiMail, HiPhone, HiHome} from "react-icons/hi";
 import {
     FaFacebookSquare,
@@ -7,9 +9,25 @@ import {
     FaInstagram,
     FaTwitterSquare,
   } from 'react-icons/fa';
-  
+import {Formik, Form, Field, ErrorMessage} from 'formik'
+//import emailjs from '@emailjs/browser';
 
 const ContactUs = () => {
+    const [forma, setForma] = useState(false)
+
+    /*const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_mct92bg', 'template_g83fm4l', form.current, 'm2xOxQ-aK0DVQJM59')
+          .then((result) => {
+              console.log(result.text);
+          }, (error) => {
+              console.log(error.text);
+          });
+          e.target.reset()
+      };*/
+    
+
   return (
     <div className='antialiased md bg-gradient-to-r bg-gray-800 '>
         <div className='flex w-full min-h-screen max-h-screen justify-center items-center'>
@@ -50,20 +68,60 @@ const ContactUs = () => {
                     <div className='absolute w-40 h-40 bg-slate-400 rounded-full z-0 left-[280px] top-[320px]'></div>
 
                     <div className='z-10 bg-white rounded-xl shadow-lg p-8 text-gray-600 md:col-span-3'>
-                        <form action="" className='flex flex-col space-y-4'>
-                            <div><label htmlFor="" className='text-sm'>Your name</label>
-                            <input type="text" placeholder='Your name' className='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-green-300'/>
-                            </div>
+                        <Formik 
+                            initialValues={{
+                                nombre: '',
+                                correo: '',
+                                mensaje: ''
+                            }}
+                            validate={(valores) => {
+                                let errores = {};
+                            
+                            if(!valores.nombre){
+                                errores.nombre = 'Por favor ingrese un nombre'
+                                }else if(!/^[a-z ,.'-]+$/i.test(valores.nombre)){
+                                    errores.nombre = 'El nombre solo puede contener letras y espacios'
+                                }
+                            
+                            if(!valores.correo){
+                                errores.correo = 'Por favor ingresa un correo electronico'
+                            }else if(!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(valores.correo)){
+                                errores.correo = 'El correo solo puede contener letras, numeros, puntos, guiones, signos y mayusculas'
+                            }
 
-                            <div><label htmlFor="" className='text-sm'>Email</label>
-                            <input type="email" placeholder='Email Address' className='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-green-300'/>
-                            </div>
+                            return errores                                                            
+                            }}
+                            onSubmit={(valores, {resetForm}) =>{
+                                resetForm();
+                                setForma(true);
+                                setTimeout(() => setForma(false), 5000);
+                            }}
+                            >
 
-                            <div><label htmlFor="" className='text-sm'>Message</label>
-                            <textarea type="text" placeholder='Message' rows='4' className='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-green-300'/>
-                            </div>
-                            <button className='inline-block self-end hover:scale-105 hover:transition hover:ease-in hover:duration-300 bg-violet-900 hover:bg-violet-950 tracking-wider text-white font-bold rounded-lg px-6 py-2 uppercase text-sm'>Send Message</button>
-                        </form>
+                            {({errors}) => (
+                                <Form action="" className='flex flex-col space-y-4' ref={Form} >
+                                    <div>
+                                        <label htmlFor="nombre" className='text-sm'>Your name</label>
+                                    <Field type="text" id='nombre' name='nombre' placeholder='Your name' className='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-green-300'/>
+                                    <ErrorMessage name='nombre'  component={() => (<div className='error text-red-500'>{errors.nombre}</div>)}></ErrorMessage>
+                                    </div>
+
+                                    <div>
+                                    <label htmlFor="correo" className='text-sm'>Your name</label>
+                                    <Field type="text" id='correo' name='correo' placeholder='mail@mail.com' className='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none focus:ring-2 focus:ring-green-300'/>
+                                    <ErrorMessage name='correo' component={() => (<div className='error text-red-500'>{errors.correo}</div>)}></ErrorMessage>
+                                    </div>
+
+                                    <div>
+                                        <label htmlFor="" className='text-sm'>Message</label>
+                                    <textarea type="text" placeholder='Message' name='message' rows='4' className='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-green-300'/>
+                                    </div>
+                                    <button type='submit' className='inline-block self-end hover:scale-105 hover:transition hover:ease-in hover:duration-300 bg-violet-900 hover:bg-violet-950 tracking-wider text-white font-bold rounded-lg px-6 py-2 uppercase text-sm'>Send Message</button>
+                                    {forma && <p className='text-xl text-black text-center bg-green-200 p-2 border border-solid border-black shadow-xl rounded-xl'>Formulario enviado con exito!</p>}
+                                </Form>
+
+                            )}
+                        </Formik>
                     </div>
                 </div>
             </div>
