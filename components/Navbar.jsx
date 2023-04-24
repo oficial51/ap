@@ -57,7 +57,7 @@ const Navbar = () => {
         >
           <ul>
             <li onClick={handleNav} className='p-4 border-solid border border-x-gray-900 border-t-gray-900 border-b-violet-600 text-4xl hover:text-gray-500 transition-colors duration-100 ease-in'>
-              <Link href='/'>Home</Link>
+              <Link href='/' legacyBehavior ><a>Home</a></Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl  border-solid border border-x-gray-900 border-t-gray-900 hover:text-gray-500 transition-colors duration-100 ease-in'>
               <Link href='/#gallery'>Gallery</Link>
