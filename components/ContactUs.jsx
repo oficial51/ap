@@ -7,13 +7,12 @@ import {
     FaTwitterSquare,
   } from 'react-icons/fa';
   
-import Navbar from './Navbar';
 
 const ContactUs = () => {
   return (
     <div className='antialiased md bg-gradient-to-r bg-gray-800 '>
         <div className='flex w-full min-h-screen max-h-screen justify-center items-center'>
-            <div className='flex flex-col md:space-x-6 md:space-y-0 space-y-6 max-h-screen bg-slate-700 w-full max-w-[1240px] md:h-[600px] p-8 rounded-xl shadow-lg text-white'>
+            <div className='flex flex-col md:space-x-6 md:space-y-0 space-y-6 max-h-screen bg-slate-700 w-full max-w-[1240px] overflow-hidden md:h-[600px] p-8 rounded-xl shadow-lg text-white'>
                 <div className=' relative flex flex-col md:flex-row md:space-x-6 md:space-y-0 space-y-6 justify-between md:grid md:my-auto  md:grid-cols-5'>
                         
 

@@ -11,7 +11,7 @@ const Hero = ({heading, message}) => {
         <h2 className='text-6xl text-green-600 font-bold'>{heading}</h2>
         <p className='py-5 text-2xl mt-2 tracking-wider '>{message} <Typedx></Typedx></p>
         <button className='px-8 py-2 border rounded-lg hover:bg-green-950 transition-colors duration-300'>
-          <Link href='/contact' className='tracking-wider text-xl'>Contactanos</Link>
+          <Link href='/Contact' className='tracking-wider text-xl'>Contactanos</Link>
         </button>
       </div>
     </div>
