@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <div
       style={{ backgroundColor: `${color}` }}
-      className='fixed left-0 top-0 w-full z-10 ease-in duration-300'
+      className='fixed left-0 top-0 w-full z-20 ease-in duration-300'
     >
       <div className='max-w-[1240px] m-auto flex justify-between items-center p-4 text-white max-h-[500px] bg-gray-800 rounded-b-lg'>
         <Link href='/'>
@@ -35,7 +35,7 @@ const Navbar = () => {
             <Link href='/work'>Trabajos</Link>
           </li>
           <li className='m-4 hover:hover:text-gray-500 transition-colors duration-100 ease-in'>
-            <Link href='/contact' >Contacto</Link>
+            <Link href='/Contact' >Contacto</Link>
           </li>
         </ul>
 
@@ -56,17 +56,17 @@ const Navbar = () => {
           }
         >
           <ul>
-            <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 transition-colors duration-100 ease-in'>
+            <li onClick={handleNav} className='p-4 border-solid border border-x-gray-900 border-t-gray-900 border-b-violet-600 text-4xl hover:text-gray-500 transition-colors duration-100 ease-in'>
               <Link href='/'>Home</Link>
             </li>
-            <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 transition-colors duration-100 ease-in'>
+            <li onClick={handleNav} className='p-4 text-4xl  border-solid border border-x-gray-900 border-t-gray-900 hover:text-gray-500 transition-colors duration-100 ease-in'>
               <Link href='/#gallery'>Gallery</Link>
             </li>
-            <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 transition-colors duration-100 ease-in'>
+            <li onClick={handleNav} className='p-4 text-4xl  border-solid border border-x-gray-900 border-t-gray-900 hover:text-gray-500 transition-colors duration-100 ease-in'>
               <Link href='/work'>Work</Link>
             </li>
-            <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500 transition-colors duration-100 ease-in'>
-              <Link href='/contact'>Contact</Link>
+            <li onClick={handleNav} className='p-4 text-4xl  border-solid border border-x-gray-900 border-t-gray-900 hover:text-gray-500 transition-colors duration-100 ease-in'>
+              <Link href='/Contact'>Contact</Link>
             </li>
           </ul>
         </div>
