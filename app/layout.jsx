@@ -7,7 +7,7 @@ const montserrat = Raleway({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Captur',
-  description: 'Your preferred Tech agency',
+  description: 'Tu agencia Tecnologica preferida',
 }
 
 export default function RootLayout({ children }) {
@@ -17,6 +17,7 @@ export default function RootLayout({ children }) {
       <main className={montserrat.className}>
           <Navbar />
           {children}
+          
         </main>
         </body>
     </html>
