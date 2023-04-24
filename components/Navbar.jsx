@@ -26,7 +26,7 @@ const Navbar = () => {
         </Link>
         <ul style={{ color: `${textColor}` }} className='hidden sm:flex '>
           <li className='m-4 hover:hover:text-gray-500 transition-colors duration-100 ease-in'>
-            <Link href='/' className='underline text-violet-600 decoration-orange- decoration-solid'>Home</Link>
+            <a href='/' className='underline text-violet-600 decoration-solid'>Home</a>
           </li>
           <li className='m-4 hover:hover:text-gray-500 transition-colors duration-100 ease-in'>
             <Link href='/#gallery'>Galeria</Link>
@@ -57,7 +57,7 @@ const Navbar = () => {
         >
           <ul>
             <li onClick={handleNav} className='p-4 border-solid border border-x-gray-900 border-t-gray-900 border-b-violet-600 text-4xl hover:text-gray-500 transition-colors duration-100 ease-in'>
-              <Link href='/' legacyBehavior ><a>Home</a></Link>
+              <Link href='/'>Home</Link>
             </li>
             <li onClick={handleNav} className='p-4 text-4xl  border-solid border border-x-gray-900 border-t-gray-900 hover:text-gray-500 transition-colors duration-100 ease-in'>
               <Link href='/#gallery'>Gallery</Link>
