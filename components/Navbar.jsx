@@ -26,7 +26,7 @@ const Navbar = () => {
         </Link>
         <ul style={{ color: `${textColor}` }} className='hidden sm:flex '>
           <li className='m-4 hover:hover:text-gray-500 transition-colors duration-100 ease-in'>
-            <a href='/' className='underline text-violet-600 decoration-solid'>Home</a>
+            <Link href='/ap' className='underline text-violet-600 decoration-solid'>Home</Link>
           </li>
           <li className='m-4 hover:hover:text-gray-500 transition-colors duration-100 ease-in'>
             <Link href='/#gallery'>Galeria</Link>
