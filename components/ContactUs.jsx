@@ -117,7 +117,7 @@ const ContactUs = () => {
                                     <Field component='textarea' type="text" placeholder='Message' id='message' name='message' rows='4' className='ring-1 ring-gray-300 w-full rounded-md px-4 py-2 outline-none focus:ring-2 focus:ring-green-300'/>
                                     </div>
                                     <button type='submit' className='inline-block self-end hover:scale-105 hover:transition hover:ease-in hover:duration-300 bg-violet-900 hover:bg-violet-950 tracking-wider text-white font-bold rounded-lg px-6 py-2 uppercase text-sm'>Send Message</button>
-                                    {forma && <div className='text-xl relative text-black text-center bg-green-200 p-2 border border-solid border-black shadow-xl rounded-xl'>Formulario enviado con exito!</div>}
+                                    {forma && <p className='text-xl relative text-black text-center bg-green-200 p-2 border border-solid border-black shadow-xl rounded-xl'>Formulario enviado con exito!</p>}
                                 </Form>
 
                             )}
