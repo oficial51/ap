@@ -1,5 +1,4 @@
 import React from 'react';
-import App from './form';
 
 const Newsletter = () => {
   return (
